@@ -169,6 +169,7 @@ jobs:
             echo "::error::Decoded keystore is too small (${KS_SIZE} bytes) — Base64 decode may have failed"
             exit 1
           fi
+          # WCXLC 独立仓库使用固定签名 Secrets；请保留密钥备份以支持 APK 覆盖升级。
 
           # Try PKCS12 first, then JKS
           KS_LOADED=false
